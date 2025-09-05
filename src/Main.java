@@ -56,11 +56,10 @@ public class Main {
         Scanner in = new Scanner(System.in);
         animals.add("Крокодил");
         while (true) {
-            System.out.println("\n=== Меню ===");
             System.out.println("1 - Показать список животных");
             System.out.println("2 - Добавить животное в список");
             System.out.println("3 - Удалить животное из списка");
-            System.out.println("4 - Выход");
+            System.out.println("0 - Выход");
             System.out.print("Выберите действие: ");
 
             int number = in.nextInt();
@@ -73,14 +72,12 @@ public class Main {
                         System.out.println(animal);
                     }
                     break;
-
                 case 2:
                     System.out.print("Какое животное вы хотите добавить? ");
                     String name = in.nextLine();
                     animals.add(name);
                     System.out.println("Животное \"" + name + "\" добавлено.");
                     break;
-
                 case 3:
                     System.out.print("Какое животное вы хотите удалить? ");
                     String nameToRemove = in.nextLine();
@@ -93,12 +90,8 @@ public class Main {
                         System.out.println("Животное \"" + nameToRemove + "\" не найдено.");
                     }
                     break;
-
-                case 4:
-                    System.out.println("До свидания!");
-                    in.close();
+                case 0:
                     return;
-
                 default:
                     System.out.println("Вы выбрали неверную цифру. Попробуйте снова.");
             }
