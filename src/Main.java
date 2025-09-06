@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
         firstTask();
@@ -10,7 +8,7 @@ public class Main {
         thirdTask();
     }
 
-    static void firstTask(){
+    static void firstTask() {
         ArrayList<Integer> speeds = new ArrayList<>(); // объявите список
         speeds.add(120);
         speeds.add(75);
@@ -21,7 +19,7 @@ public class Main {
 
         int sum = 0;
         for (int speed : speeds) {
-            sum = sum + speed;
+            sum += speed;
         }
 
         int averageSpeed = sum / speeds.size();
@@ -29,7 +27,7 @@ public class Main {
 
     }
 
-    static void secondTask(){
+    static void secondTask() {
         ArrayList<String> animals = new ArrayList<>();
         animals.add("Шиншила");
         animals.add("Крокодил");
@@ -51,10 +49,9 @@ public class Main {
         System.out.println("В 13:00");
     }
 
-    static void thirdTask(){
+    static void thirdTask() {
         ArrayList<String> animals = new ArrayList<>();
         Scanner in = new Scanner(System.in);
-        animals.add("Крокодил");
         while (true) {
             System.out.println("1 - Показать список животных");
             System.out.println("2 - Добавить животное в список");
@@ -81,10 +78,9 @@ public class Main {
                 case 3:
                     System.out.print("Какое животное вы хотите удалить? ");
                     String nameToRemove = in.nextLine();
-                    int index = animals.indexOf(nameToRemove);
 
-                    if (index != -1) {
-                        animals.remove(index);
+                    if (animals.contains(nameToRemove)) {
+                        animals.remove(nameToRemove);
                         System.out.println("Животное \"" + nameToRemove + "\" удалено.");
                     } else {
                         System.out.println("Животное \"" + nameToRemove + "\" не найдено.");
